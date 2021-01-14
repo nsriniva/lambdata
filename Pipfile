@@ -8,6 +8,7 @@ pandas = "*"
 
 [dev-packages]
 twine = "*"
+mypy = "*"
 
 [requires]
 python_version = "3.8"
