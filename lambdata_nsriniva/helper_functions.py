@@ -1,7 +1,7 @@
 from os import name
 from pandas import DataFrame, Series
 from numpy import NaN
-from us_state_abbrev import us_state_abbrev, abbrev_us_state
+from .us_state_abbrev import us_state_abbrev, abbrev_us_state
 
 def null_count(df):
     print(f'Input DataFrame:\n{df}\n')

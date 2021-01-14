@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="lambdata-nsriniva", # Replace with your own username
-    version="0.0.1",
+    version="0.0.5",
     author="Srini Nariangadu",
     author_email="srini.nariangadu@gmail.com",
     description="A small sample package",
@@ -18,6 +18,6 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.8',
+    python_requires='>=3.6',
     install_requires=['pandas'],
 )
