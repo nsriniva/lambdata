@@ -1,10 +1,10 @@
-from os import name
 from pandas import DataFrame, Series
 from numpy import NaN
 from .us_state_abbrev import us_state_abbrev, abbrev_us_state
 
 def null_count(df):
-    print(f'Input DataFrame:\n{df}\n')
+    print('Input DataFrame:')
+    print(df)
 
     return df.isna().sum().sum()
 
@@ -17,7 +17,9 @@ def abbr_2_st(state_series, abbr_2_st=True):
     
     oper = int(abbr_2_st)
     
-    print(f'Input Series:\n{state_series}\n')
+    print('Input Series:')
+    print(state_series)
+
     for elem in state_series:
         ret_list.append(opers[oper][0].get(elem,f'{elem} is not a valid state {opers[oper][1]}'))
     
