@@ -45,7 +45,7 @@ us_state_abbrev = {
     'New York': 'NY',
     'North Carolina': 'NC',
     'North Dakota': 'ND',
-    'Northern Mariana Islands':'MP',
+    'Northern Mariana Islands': 'MP',
     'Ohio': 'OH',
     'Oklahoma': 'OK',
     'Oregon': 'OR',
@@ -75,4 +75,5 @@ if __name__ == '__main__':
 
     print("Wisconin --> WI?", us_state_abbrev['Wisconsin'] == 'WI')
     print("WI --> Wisconin?", abbrev_us_state['WI'] == 'Wisconsin')
-    print("Number of entries (50 states, DC, 5 Territories) == 56? ", 56 == len(us_state_abbrev))
+    print("Number of entries (50 states, DC, 5 Territories) == 56? ",
+          56 == len(us_state_abbrev))
