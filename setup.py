@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="lambdata-nsriniva", 
-    version="0.0.9",
+    version="0.0.10",
     author="Srini Nariangadu",
     author_email="srini.nariangadu@gmail.com",
     description="A small sample package",
