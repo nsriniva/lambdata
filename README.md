@@ -1,5 +1,5 @@
-# lambdata
-This is a package that is being created as part of my coursework for Unit 3 of Lambda School's Data Science program.
+# lambdata_nsriniva
+This is a package created as part of my coursework for Unit 3 of Lambda School's Data Science program.
 
 The `helper_functions` module implements:
 
