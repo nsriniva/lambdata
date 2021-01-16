@@ -5,14 +5,8 @@ To use
 `from lambdata_nsriniva import helper_functions`
 
 The `helper_functions` module implements:
-`null_count(df)`: Check a dataframe for nulls and return the number of missing values.
-
-				returns null count integer
-
+`null_count(input_df)`: Check a dataframe for nulls and return the number of missing value
 and
+`abbr_2_st(abbr_or_st_series, input_abbr=True)`: Takes US state abbreviations and returns names or vice versa
 
-`abbr_2_st(state_series, abbr_2_st=True)`: Return a new column containing the full name from a State abbreviation column 
-											-> An input of FL would return Florida. This function should also take a boolean (abbr_2_state) and when False takes full state names and return state abbreviations. 
-											-> An input of Florida would return Fl.
-
-										returns pd.Series with translations
+Check module and function docstrings in `lambdata_nsriniva/helper_functions.py` for additional details.
