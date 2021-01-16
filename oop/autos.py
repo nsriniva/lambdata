@@ -1,5 +1,5 @@
 
-class Auto(object):
+class Auto():
     def __init__(self, make, model, year, color, num_wheels):
         self.make = make
         self.model = model
