@@ -13,3 +13,7 @@
 `python setup.py sdist bdist_wheel`
 
 `twine upload --repository testpypi dist/*`
+
+`docker build Docker -t python`
+
+`docker run -it python python lambdata_test.py`
