@@ -14,6 +14,7 @@
 
 `twine upload --repository testpypi dist/*`
 
-`docker build Docker -t python`
+`docker build Docker -t python` : Use `docker build Docker --no-cache -t python` if a new version of any package needs to be installed in the image.
+
 
 `docker run -it python python lambdata_test.py`
