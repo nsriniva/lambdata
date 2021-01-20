@@ -3,9 +3,13 @@ This module exports the following methods
 
 null_count(input_df)
 abbr_2_st(abbr_or_st_series, input_abbr=True)
+train_test_split(input_df, frac=0.2)
+list_2_series(list_2_series, input_df, col_name='NewCol')
 '''
+
 from pandas import DataFrame, Series
 from numpy import NaN
+from sklearn.model_selection import train_test_split as skl_split
 from .us_state_abbrev import us_state_abbrev, abbrev_us_state
 
 
@@ -65,6 +69,36 @@ def abbr_2_st(abbr_or_st_series, input_abbr=True):
     return ret_series
 
 
+def train_test_split(input_df, frac=0.2):
+    '''
+    Given an input dataframe and the percentage required for the training set returns
+    training and test dataframes.
+    Input:
+    input_df  -> DataFrame to be split
+    frac      -> Percent of data to set aside for training
+    '''
+
+    # The smallest value that frac can be to have at least one entry
+    # in the training dataset
+    min_frac = 1/input_df.shape[0]
+
+    # Force frac to be at least min_frac
+    frac = max(frac, min_frac)
+
+    return skl_split(input_df, train_size=frac)
+
+
+def list_2_series(input_list, input_df, col_name='NewCol'):
+    '''
+    Given a list and a  dataframe add the list as a new column to the dataframe.
+    Input:
+    input_df        -> DataFrame to which the list needs to be added as a column
+    list_2_seriex   -> list to be added as new column to the dataframe
+    col_name        -> name of the new column to be added
+    '''
+    input_df[col_name] = Series(input_list)
+
+
 if __name__ == "__main__":
     Null_DF = DataFrame({'col0': [NaN, 4, 3], 'col1': [
                         9, NaN, NaN], 'col2': [10, 2, 2]})
@@ -72,9 +106,21 @@ if __name__ == "__main__":
     abbr_st = DataFrame({ST_ABBR[0]: ['AL', 'AZ', 'CA', 'DE', 'OH'],
                          ST_ABBR[1]: ['Alabama', 'Arizona', 'California', 'Delaware', 'Ohio']})
 
+    Split_DF = DataFrame({'col0': [0, 3, 6], 'col1': [
+        1, 4, 7], 'col2': [2, 5, 8]})
+
     print(Null_DF)
     print(abbr_st)
+    print(Split_DF)
 
     print(f'Null Count : {null_count(Null_DF)}\n')
     print(f'Output Series:\n{abbr_2_st(abbr_st[ST_ABBR[0]])}\n')
     print(f'Output Series:\n{abbr_2_st(abbr_st[ST_ABBR[1]], False)}\n')
+
+    train_df, test_df = train_test_split(Split_DF)
+    print(f'Train DataFrame:\n{train_df}\n')
+    print(f'Test DataFrame:\n{test_df}\n')
+
+    list_2_series([10, 9, 8], Split_DF)
+
+    print(f'DataFrame with added column:\n{Split_DF}')

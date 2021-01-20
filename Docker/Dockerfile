@@ -15,5 +15,6 @@ RUN dnf update -y&& \
   pip3 install pipenv 
 
 RUN pip3 install pandas
-RUN pip3 install -i https://test.pypi.org/simple/ lambdata-nsriniva
+RUN pip3 install sklearn
+RUN pip3 install -i https://test.pypi.org/simple/ --upgrade lambdata-nsriniva
 COPY lambdata_test.py .

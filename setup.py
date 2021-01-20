@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="lambdata-nsriniva", 
-    version="0.0.10",
+    version="0.0.11",
     author="Srini Nariangadu",
     author_email="srini.nariangadu@gmail.com",
     description="A small sample package",
@@ -19,5 +19,5 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.6',
-    install_requires=['pandas'],
+    install_requires=['pandas', 'sklearn'],
 )
