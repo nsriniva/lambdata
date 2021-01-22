@@ -1,16 +1,27 @@
-# lambdata_nsriniva
-This is a package created as part of my coursework for Unit 3 of Lambda School's Data Science program.
+# lambdata_nsriniva 
 
-The `helper_functions` module implements:
+## What is it ?
+**lambdata_nsriniva** is a python package created as part of my coursework for Unit 3 of Lambda School's Data Science program.
 
-`null_count(input_df)`: Check a dataframe for nulls and return the number of missing value
+## Main features
 
-and
+The `helper_functions` module implements utility functions for data manipulation.
 
-`abbr_2_st(abbr_or_st_series, input_abbr=True)`: Takes US state abbreviations and returns names or vice versa
+## Where to get it
+The source code is currently hosted on GitHub at:
+https://github.com/nsriniva/lambdata
 
-Check module and function docstrings in `lambdata_nsriniva/helper_functions.py` for additional details.
+Binary installers for the latest released version are available at the [Python
+Test Package Index (TestPyPI)](https://test.pypi.org/project/lambdata-nsriniva/)
 
-To use 
 
-`from lambdata_nsriniva.helper_functions import null_count, abbr_2_st`
+```sh
+pip  install -i https://test.pypi.org/simple/ lambdata-nsriniva
+```
+
+## Dependencies
+- [pandas](https://pandas.pydata.org/)
+- [sklearn](https://scikit-learn.org/stable/)
+
+## License
+[MIT](LICENSE)

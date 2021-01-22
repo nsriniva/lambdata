@@ -12,6 +12,8 @@ from numpy import NaN
 from sklearn.model_selection import train_test_split as skl_split
 from .us_state_abbrev import us_state_abbrev, abbrev_us_state
 
+import unittest
+
 
 def null_count(input_df):
     '''
@@ -99,28 +101,40 @@ def list_2_series(input_list, input_df, col_name='NewCol'):
     input_df[col_name] = Series(input_list)
 
 
-if __name__ == "__main__":
-    Null_DF = DataFrame({'col0': [NaN, 4, 3], 'col1': [
-                        9, NaN, NaN], 'col2': [10, 2, 2]})
-
-    abbr_st = DataFrame({ST_ABBR[0]: ['AL', 'AZ', 'CA', 'DE', 'OH'],
-                         ST_ABBR[1]: ['Alabama', 'Arizona', 'California', 'Delaware', 'Ohio']})
+class TestHelperFunctions(unittest.TestCase):
 
     Split_DF = DataFrame({'col0': [0, 3, 6], 'col1': [
         1, 4, 7], 'col2': [2, 5, 8]})
 
-    print(Null_DF)
-    print(abbr_st)
-    print(Split_DF)
+    def test_null_count(self):
+        Null_DF = DataFrame({'col0': [NaN, 4, 3], 'col1': [
+            9, NaN, NaN], 'col2': [10, 2, 2]})
 
-    print(f'Null Count : {null_count(Null_DF)}\n')
-    print(f'Output Series:\n{abbr_2_st(abbr_st[ST_ABBR[0]])}\n')
-    print(f'Output Series:\n{abbr_2_st(abbr_st[ST_ABBR[1]], False)}\n')
+        self.assertEqual(null_count(Null_DF), 3)
 
-    train_df, test_df = train_test_split(Split_DF)
-    print(f'Train DataFrame:\n{train_df}\n')
-    print(f'Test DataFrame:\n{test_df}\n')
+    def test_abbr_2_st(self):
+        abbr_st = DataFrame({ST_ABBR[0]: ['AL', 'AZ', 'CA', 'DE', 'OH'],
+                             ST_ABBR[1]: ['Alabama', 'Arizona', 'California', 'Delaware', 'Ohio']})
 
-    list_2_series([10, 9, 8], Split_DF)
+        self.assertEqual(abbr_2_st(abbr_st[ST_ABBR[0]]).tolist()[
+                         0], abbr_st[ST_ABBR[1]].tolist())
+        self.assertEqual(abbr_2_st(abbr_st[ST_ABBR[1]], False).tolist()[
+                         0], abbr_st[ST_ABBR[0]].tolist())
 
-    print(f'DataFrame with added column:\n{Split_DF}')
+    def test_train_test_split(self):
+
+        train_df, test_df = train_test_split(TestHelperFunctions.Split_DF)
+
+        self.assertEqual(train_df.shape[0], 1)
+        self.assertEqual(test_df.shape[0], 2)
+
+    def test_list_2_series(self):
+
+        orig_cols = len(TestHelperFunctions.Split_DF.columns)
+
+        list_2_series([10, 9, 8], TestHelperFunctions.Split_DF)
+        self.assertEqual(TestHelperFunctions.Split_DF.shape[1], orig_cols+1)
+
+
+if __name__ == "__main__":
+    unittest.main()
