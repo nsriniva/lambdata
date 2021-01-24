@@ -1,5 +1,6 @@
 from random import randint
 
+
 class Product(object):
 
     def __init__(self, name, price=10, weight=20, flammability=0.5):
@@ -8,7 +9,7 @@ class Product(object):
         self.weight = weight
         self.flammability = flammability
         self.identifier = randint(1000000, 9999999)
-    
+
     def stealability(self):
         val = self.price/self.weight
 
@@ -33,9 +34,10 @@ class Product(object):
 
         return ret
 
+
 class BoxingGlove(Product):
 
-    def __init__(self,name, price=10, weight=10, flammability=0.5):
+    def __init__(self, name, price=10, weight=10, flammability=0.5):
         super().__init__(name, price, weight, flammability)
 
     def explode(self):
