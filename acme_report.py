@@ -38,7 +38,7 @@ def inventory_report(products):
 
     print('ACME CORPORATION OFFICIAL INVENTORY REPORT')
     print(f'Unique product names: {num_unique_prod_names}')
-    print(f'Average price: {avg_price:0.2f}')
+    print(f'Average price: {avg_price}')
     print(f'Average weight: {avg_weight}')
     print(f'Average flammability: {avg_flammability}')
 
