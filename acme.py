@@ -1,7 +1,7 @@
 from random import randint
 
 
-class Product(object):
+class Product():
 
     def __init__(self, name, price=10, weight=20, flammability=0.5):
         self.name = name
@@ -15,7 +15,7 @@ class Product(object):
 
         if val < 0.5:
             ret = "Not so stealable..."
-        elif val >= 0.5 and val < 1.0:
+        elif 0.5 <= val < 1.0:
             ret = "Kinda stealable."
         else:
             ret = "Very stealable!"
@@ -27,7 +27,7 @@ class Product(object):
 
         if val < 10:
             ret = "...fizzle."
-        elif val >= 10 and val < 50:
+        elif 10 <= val < 50:
             ret = "...boom!"
         else:
             ret = "...BABOOM!!"
@@ -48,7 +48,7 @@ class BoxingGlove(Product):
 
         if val < 5:
             ret = "That tickles."
-        elif val >= 5 and val < 15:
+        elif 5 <= val < 15:
             ret = "Hey that hurt!"
         else:
             ret = "OUCH!"
