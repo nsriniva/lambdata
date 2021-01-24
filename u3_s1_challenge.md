@@ -277,12 +277,25 @@ career here, you'll have to answer the following:
 - What, in your opinion, is an important part of code reviews? That is, what is
   something you pay attention to when you review code, and that you appreciate
   when others do the same for your code?
+  
+  Assuming that basic style, syntax issues are dealt with using tooling like 
+  `autopep8`, `pylint` and the newer `mypy` with type annotations, i mainly check for 
+  the following and hope for the same when others review my code:
+
+  (1) Do i understand the code i.e. is there sufficient documentation in the form of
+      docstrings and/or comments ?
+
+  (2) Does the code do what it's supposed to?
+
+  (3) Do i know a better way to do something that would help improve the code ?
+
 - We have an awful lot of computers here, and it gets pretty confusing with
   slightly different things running on all of them. How could containers help us
   improve this situation?
 
-Answer both of these questions (baseline ~5 sentences) here in text.
-
+  When dealing with a non standardized collection of computers, containers help us 
+  improve application deployment by providing a standardized environment on any 
+  computer.
 ### Part 8 - Turn it in!
 
 Provide all the files you wrote (`acme.py`, `acme_report.py`, and
