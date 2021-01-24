@@ -12,8 +12,8 @@ class Product():
 
     def stealability(self):
         """
-        Calculates the price divided by the weight, and then returns a message: 
-        if the ratio is less than 0.5 return "Not so stealable...", if it is 
+        Calculates the price divided by the weight, and then returns a message:
+        if the ratio is less than 0.5 return "Not so stealable...", if it is
         greater or equal to 0.5 but less than 1.0 return "Kinda stealable.", and
         otherwise return "Very stealable!"
         """
@@ -31,8 +31,8 @@ class Product():
     def explode(self):
         """
         Calculates the flammability times the weight, and then returns a message:
-        if the product is less than 10 return "...fizzle.", if it is greater or 
-        equal to 10 but less than 50 return "...boom!", and otherwise return 
+        if the product is less than 10 return "...fizzle.", if it is greater or
+        equal to 10 but less than 50 return "...boom!", and otherwise return
         "...BABOOM!!"
         """
         val = self.flammability * self.weight
@@ -57,8 +57,8 @@ class BoxingGlove(Product):
 
     def punch(self):
         """
-        This method returns "That tickles." if the weight is below 5, 
-        "Hey that hurt!" if the weight is greater or equal to 5 but 
+        This method returns "That tickles." if the weight is below 5,
+        "Hey that hurt!" if the weight is greater or equal to 5 but
         less than 15, and "OUCH!" otherwise
         """
         val = self.weight
